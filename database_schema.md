@@ -37,6 +37,7 @@ Handles both Admin staff and end-customer profiles.
 |---|---|---|---|
 | `id` | UUID | PRIMARY KEY | Unique identifier |
 | `name` | VARCHAR(255) | UNIQUE, NOT NULL | Brand name |
+| `logo_url` | TEXT | | URL to brand logo |
 | `created_at` | TIMESTAMPTZ | NOT NULL, DEFAULT NOW() | |
 | `updated_at` | TIMESTAMPTZ | NOT NULL, DEFAULT NOW() | |
 
@@ -52,6 +53,7 @@ Handles both Admin staff and end-customer profiles.
 | `base_notes` | VARCHAR(255) | | Comma-separated |
 | `decant_price` | DECIMAL(10,2) | NOT NULL | Price for 10ml |
 | `full_bottle_price` | DECIMAL(10,2) | NOT NULL | Price for full bottle |
+| `image_url` | TEXT | | URL to product image |
 | `stock_quantity` | INTEGER | NOT NULL, DEFAULT 0 | Inventory tracking |
 | `availability` | VARCHAR(50) | NOT NULL, DEFAULT 'AVAILABLE' | 'AVAILABLE', 'SOLD_OUT' |
 | `created_at` | TIMESTAMPTZ | NOT NULL, DEFAULT NOW() | |
