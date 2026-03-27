@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    container_name: scentcepts_db
+    environment:
+      POSTGRES_DB: scentcepts
+      POSTGRES_USER: scentcepts_user
+      POSTGRES_PASSWORD: scentcepts_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
