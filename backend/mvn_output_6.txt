@@ -1,0 +1,100 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.scentcepts:scentcepts-backend >------------------
+[INFO] Building scentcepts-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ scentcepts-backend ---
+[INFO] Deleting C:\Users\kimura\Documents\school-projects\scentscepts\backend\target
+[INFO] 
+[INFO] >>> spring-boot:3.1.5:run (default-cli) > test-compile @ scentcepts-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ scentcepts-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ scentcepts-backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 19 source files with javac [debug release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ scentcepts-backend ---
+[INFO] skip non existing resourceDirectory C:\Users\kimura\Documents\school-projects\scentscepts\backend\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ scentcepts-backend ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.1.5:run (default-cli) < test-compile @ scentcepts-backend <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.1.5:run (default-cli) @ scentcepts-backend ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2026-03-29T17:29:50.123+03:00  INFO 5812 --- [           main] com.scentcepts.ScentceptsApplication     : Starting ScentceptsApplication using Java 26 with PID 5812 (C:\Users\kimura\Documents\school-projects\scentscepts\backend\target\classes started by kimura in C:\Users\kimura\Documents\school-projects\scentscepts\backend)
+2026-03-29T17:29:50.125+03:00  INFO 5812 --- [           main] com.scentcepts.ScentceptsApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-03-29T17:29:51.101+03:00  INFO 5812 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-29T17:29:51.226+03:00  INFO 5812 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 5 JPA repository interfaces.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/C:/Users/kimura/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.15/tomcat-embed-core-10.1.15.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-03-29T17:29:52.053+03:00  INFO 5812 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-03-29T17:29:52.074+03:00  INFO 5812 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-29T17:29:52.075+03:00  INFO 5812 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2026-03-29T17:29:52.225+03:00  INFO 5812 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-29T17:29:52.225+03:00  INFO 5812 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2016 ms
+2026-03-29T17:29:52.442+03:00  INFO 5812 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-29T17:29:52.526+03:00  INFO 5812 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2026-03-29T17:29:52.529+03:00  INFO 5812 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2026-03-29T17:29:53.056+03:00  INFO 5812 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-29T17:29:53.094+03:00  INFO 5812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-29T17:29:53.376+03:00  INFO 5812 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30508066
+2026-03-29T17:29:53.378+03:00  INFO 5812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-29T17:29:53.420+03:00  WARN 5812 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-29T17:29:55.041+03:00  INFO 5812 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-29T17:29:55.137+03:00  INFO 5812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29T17:29:56.075+03:00  WARN 5812 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-29T17:29:56.662+03:00  WARN 5812 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-03-29T17:29:56.665+03:00  INFO 5812 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-29T17:29:56.669+03:00  INFO 5812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-29T17:29:56.676+03:00  INFO 5812 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-03-29T17:29:56.687+03:00  INFO 5812 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-03-29T17:29:56.722+03:00  INFO 5812 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-03-29T17:29:56.770+03:00 ERROR 5812 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.978 s
+[INFO] Finished at: 2026-03-29T17:29:56+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.1.5:run (default-cli) on project scentcepts-backend: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

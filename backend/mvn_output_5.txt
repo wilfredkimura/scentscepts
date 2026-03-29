@@ -1,0 +1,64 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.scentcepts:scentcepts-backend >------------------
+[INFO] Building scentcepts-backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ scentcepts-backend ---
+[INFO] Deleting C:\Users\kimura\Documents\school-projects\scentscepts\backend\target
+[INFO] 
+[INFO] >>> spring-boot:3.1.5:run (default-cli) > test-compile @ scentcepts-backend >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ scentcepts-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ scentcepts-backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 19 source files with javac [debug release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[8,2] cannot find symbol
+  symbol: class RestController
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[9,2] cannot find symbol
+  symbol: class RequestMapping
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[18,6] cannot find symbol
+  symbol:   class GetMapping
+  location: class com.scentcepts.controllers.OrderController
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[24,31] cannot find symbol
+  symbol:   class RequestBody
+  location: class com.scentcepts.controllers.OrderController
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[23,6] cannot find symbol
+  symbol:   class PostMapping
+  location: class com.scentcepts.controllers.OrderController
+[INFO] 5 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.601 s
+[INFO] Finished at: 2026-03-29T17:29:00+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project scentcepts-backend: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[8,2] cannot find symbol
+[ERROR]   symbol: class RestController
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[9,2] cannot find symbol
+[ERROR]   symbol: class RequestMapping
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[18,6] cannot find symbol
+[ERROR]   symbol:   class GetMapping
+[ERROR]   location: class com.scentcepts.controllers.OrderController
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[24,31] cannot find symbol
+[ERROR]   symbol:   class RequestBody
+[ERROR]   location: class com.scentcepts.controllers.OrderController
+[ERROR] /C:/Users/kimura/Documents/school-projects/scentscepts/backend/src/main/java/com/scentcepts/controllers/OrderController.java:[23,6] cannot find symbol
+[ERROR]   symbol:   class PostMapping
+[ERROR]   location: class com.scentcepts.controllers.OrderController
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
