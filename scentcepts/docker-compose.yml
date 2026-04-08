@@ -1,0 +1,49 @@
+version: "3.9"
+# scentcepts — Luxury Perfume Web Application
+# Run with: ./start.ps1   (recommended, includes port checks)
+# Or manually: docker-compose up
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      DB_URL: jdbc:postgresql://db:5432/scentcepts_db
+      DB_USER: scentcepts_user
+      DB_PASS: scentcepts
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8080
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: scentcepts_user
+      POSTGRES_PASSWORD: scentcepts
+      POSTGRES_DB: scentcepts_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - scentcepts_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scentcepts_user -d scentcepts_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  scentcepts_pgdata:

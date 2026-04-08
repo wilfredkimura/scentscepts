@@ -1,0 +1,4 @@
+{
+  "migrationVersion": 5,
+  "flyway": true
+}

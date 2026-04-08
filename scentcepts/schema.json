@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Brand",
+    "fields": [
+      { "name": "name", "type": "String", "nullable": false, "unique": true },
+      { "name": "logoUrl", "type": "String" }
+    ],
+    "relations": [
+      { "type": "OneToMany", "target": "Product", "fieldName": "products" }
+    ]
+  },
+  {
+    "name": "Product",
+    "fields": [
+      { "name": "name", "type": "String", "nullable": false },
+      { "name": "description", "type": "String" },
+      { "name": "topNotes", "type": "String" },
+      { "name": "middleNotes", "type": "String" },
+      { "name": "baseNotes", "type": "String" },
+      { "name": "decantPrice", "type": "BigDecimal", "nullable": false },
+      { "name": "fullBottlePrice", "type": "BigDecimal", "nullable": false },
+      { "name": "imageUrl", "type": "String" },
+      { "name": "stockQuantity", "type": "Integer", "nullable": false },
+      { "name": "availability", "type": "String", "nullable": false }
+    ],
+    "relations": [
+      { "type": "ManyToOne", "target": "Brand", "fieldName": "brand", "eager": true }
+    ]
+  },
+  {
+    "name": "ScentOrder",
+    "fields": [
+      { "name": "totalAmount", "type": "BigDecimal", "nullable": false },
+      { "name": "status", "type": "String", "nullable": false },
+      { "name": "deliveryAddress", "type": "String", "nullable": false }
+    ],
+    "relations": [
+      { "type": "ManyToOne", "target": "User", "fieldName": "user", "eager": true },
+      { "type": "OneToMany", "target": "OrderItem", "fieldName": "items" }
+    ]
+  },
+  {
+    "name": "OrderItem",
+    "fields": [
+      { "name": "size", "type": "String", "nullable": false },
+      { "name": "quantity", "type": "Integer", "nullable": false },
+      { "name": "priceAtPurchase", "type": "BigDecimal", "nullable": false }
+    ],
+    "relations": [
+      { "type": "ManyToOne", "target": "ScentOrder", "fieldName": "order" },
+      { "type": "ManyToOne", "target": "Product", "fieldName": "product", "eager": true }
+    ]
+  }
+]
