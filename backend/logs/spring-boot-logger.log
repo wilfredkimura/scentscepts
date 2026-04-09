@@ -1623,3 +1623,117 @@ Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
 	... 107 common frames omitted
+2026-04-09 18:52:00,295 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2026-04-09 18:52:00,476 INFO o.s.b.StartupInfoLogger [main] Starting ScentceptsApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 9116 (C:\Users\kimura\Documents\school-projects\scentscepts\backend\target\scentcepts-0.0.1-SNAPSHOT.jar started by kimura in C:\Users\kimura\Documents\school-projects\scentscepts\backend)
+2026-04-09 18:52:00,478 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.4.2, Spring v6.2.2
+2026-04-09 18:52:00,479 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2026-04-09 18:52:02,879 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-09 18:52:03,020 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 120 ms. Found 5 JPA repository interfaces.
+2026-04-09 18:52:04,970 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2026-04-09 18:52:05,000 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-09 18:52:05,008 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2026-04-09 18:52:05,009 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-09 18:52:05,109 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2026-04-09 18:52:05,111 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4517 ms
+2026-04-09 18:52:05,927 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2026-04-09 18:52:06,595 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6248cfab
+2026-04-09 18:52:06,601 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2026-04-09 18:52:06,856 INFO o.f.c.i.l.s.Slf4jLog [main] Database: jdbc:postgresql://localhost:5433/scentcepts_db (PostgreSQL 15.17)
+2026-04-09 18:52:07,045 INFO o.f.c.i.l.s.Slf4jLog [main] Successfully validated 8 migrations (execution time 00:00.113s)
+2026-04-09 18:52:07,095 INFO o.f.c.i.l.s.Slf4jLog [main] Current version of schema "public": 7
+2026-04-09 18:52:07,152 INFO o.f.c.i.l.s.Slf4jLog [main] Migrating schema "public" to version "8 - increase user avatar length"
+2026-04-09 18:52:07,223 INFO o.f.c.i.l.s.Slf4jLog [main] Successfully applied 1 migration to schema "public", now at version v8 (execution time 00:00.030s)
+2026-04-09 18:52:07,516 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-09 18:52:07,735 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-04-09 18:52:07,847 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2026-04-09 18:52:08,641 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-09 18:52:08,774 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-09 18:52:08,829 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.17
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-09 18:52:10,985 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-09 18:52:11,742 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09 18:52:12,771 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'jwtAuthFilter' configured for use
+2026-04-09 18:52:13,165 INFO o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer [main] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-04-09 18:52:13,166 WARN o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [main] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-04-09 18:52:13,801 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-09 18:52:14,866 DEBUG o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-09 18:52:15,857 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2026-04-09 18:52:15,890 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
+2026-04-09 18:52:15,908 INFO o.s.b.StartupInfoLogger [main] Started ScentceptsApplication in 16.804 seconds (process running for 17.828)
+2026-04-09 19:10:01,874 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-09 19:10:01,875 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2026-04-09 19:10:01,877 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 2 ms
+2026-04-09 19:10:01,930 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing OPTIONS /api/v1/brands?size=100&sort=name,asc
+2026-04-09 19:10:01,930 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/brands?size=100&sort=name,asc
+2026-04-09 19:10:01,994 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 19:10:01,995 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 19:10:02,388 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 19:10:02,388 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 19:10:02,532 WARN o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier [http-nio-8080-exec-4] Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-04-09 19:10:04,925 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing OPTIONS /api/v1/brands?size=50
+2026-04-09 19:10:04,925 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing OPTIONS /api/v1/products?size=50
+2026-04-09 19:10:04,927 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing OPTIONS /api/v1/brands?size=50
+2026-04-09 19:10:04,927 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing OPTIONS /api/v1/products?size=50
+2026-04-09 19:10:04,952 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/brands?size=50
+2026-04-09 19:10:04,952 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/products?size=50
+2026-04-09 19:10:04,954 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/products?size=50
+2026-04-09 19:10:04,956 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/brands?size=50
+2026-04-09 19:10:04,981 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/brands?size=50
+2026-04-09 19:10:04,981 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/products?size=50
+2026-04-09 19:10:04,991 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/brands?size=50
+2026-04-09 19:10:04,991 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/products?size=50
+2026-04-09 19:10:32,341 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing OPTIONS /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d04
+2026-04-09 19:10:32,349 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d04
+2026-04-09 19:10:32,369 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d04
+2026-04-09 19:10:32,517 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/products?size=50
+2026-04-09 19:10:32,537 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured GET /api/v1/products?size=50
+2026-04-09 19:11:16,405 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing OPTIONS /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d03
+2026-04-09 19:11:16,413 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d03
+2026-04-09 19:11:16,429 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d03
+2026-04-09 19:11:16,455 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/products?size=50
+2026-04-09 19:11:16,472 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/products?size=50
+2026-04-09 19:11:51,011 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing OPTIONS /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d02
+2026-04-09 19:11:51,019 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d02
+2026-04-09 19:11:51,035 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d02
+2026-04-09 19:11:51,060 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/products?size=50
+2026-04-09 19:11:51,079 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/products?size=50
+2026-04-09 19:12:20,732 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing OPTIONS /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d01
+2026-04-09 19:12:20,739 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d01
+2026-04-09 19:12:20,756 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d01
+2026-04-09 19:12:20,785 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/products?size=50
+2026-04-09 19:12:20,801 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/products?size=50
+2026-04-09 19:12:31,124 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing OPTIONS /api/v1/products
+2026-04-09 19:12:31,137 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing OPTIONS /api/v1/brands
+2026-04-09 19:12:31,139 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing OPTIONS /api/v1/products
+2026-04-09 19:12:31,140 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/brands
+2026-04-09 19:12:31,142 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/products
+2026-04-09 19:12:31,160 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/brands
+2026-04-09 19:12:31,160 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/brands
+2026-04-09 19:12:31,161 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/products
+2026-04-09 19:12:31,174 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/products
+2026-04-09 19:12:31,191 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/brands
+2026-04-09 19:12:31,194 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured GET /api/v1/products
+2026-04-09 19:12:31,198 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/brands
+2026-04-09 19:12:46,278 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing GET /api/v1/brands
+2026-04-09 19:12:46,283 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing OPTIONS /api/v1/products?brandId=e1a72680-7768-4f24-9b2f-4b0c7c8c8c82
+2026-04-09 19:12:46,297 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/products?brandId=e1a72680-7768-4f24-9b2f-4b0c7c8c8c82
+2026-04-09 19:12:46,302 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured GET /api/v1/brands
+2026-04-09 19:12:46,322 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/products?brandId=e1a72680-7768-4f24-9b2f-4b0c7c8c8c82
+2026-04-09 19:12:47,866 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/brands
+2026-04-09 19:12:47,878 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/products?brandId=e1a72680-7768-4f24-9b2f-4b0c7c8c8c84
+2026-04-09 19:12:47,887 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/products?brandId=e1a72680-7768-4f24-9b2f-4b0c7c8c8c84
+2026-04-09 19:12:47,893 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/brands
+2026-04-09 19:12:47,910 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/products?brandId=e1a72680-7768-4f24-9b2f-4b0c7c8c8c84
+2026-04-09 19:12:48,939 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/products
+2026-04-09 19:12:48,941 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/brands
+2026-04-09 19:12:48,959 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/products
+2026-04-09 19:12:48,963 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/brands
