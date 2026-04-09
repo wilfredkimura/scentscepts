@@ -165,6 +165,8 @@ The API leverages **JWT Bearer tokens** for security.
 | `ROLE_USER` | View cart, past orders, and manage public profile |
 | `ROLE_ADMIN` | Navigate `/api/v1/admin/**` (user management, global stats, soft deletes) |
 
+> 👑 **Initial Setup & Automatic Admin Access**: The backend implements a "bootstrap" mechanism for the very first user. The **first person to register an account** on a fresh database is automatically assigned the `ROLE_ADMIN` role. Everyone who registers after the first account will automatically default to `ROLE_USER`.
+
 ---
 
 ## 🛒 Shopping Flow
