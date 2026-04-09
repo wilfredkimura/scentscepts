@@ -30,13 +30,13 @@ public class Product extends AbstractAuditingEntity {
     @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String topNotes;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String middleNotes;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String baseNotes;
 
     @Column(nullable = false)
@@ -45,7 +45,7 @@ public class Product extends AbstractAuditingEntity {
     @Column(nullable = false)
     private BigDecimal fullBottlePrice;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TEXT")
     private String imageUrl;
 
     @Column(nullable = false)

@@ -26,5 +26,6 @@ public interface BrandMapper {
     List<BrandDto> toDtoList(List<Brand> entities);
 
     /** Update an existing entity in-place from a DTO (for update operations) */
+    @org.mapstruct.Mapping(target = "id", ignore = true)
     void updateEntityFromDto(BrandDto dto, @MappingTarget Brand entity);
 }

@@ -48,6 +48,7 @@ public class User extends AbstractAuditingEntity implements UserDetails {
 
     private String bio;
 
+    @Column(columnDefinition = "TEXT")
     private String avatarUrl;
 
     private LocalDateTime deletedAt;
