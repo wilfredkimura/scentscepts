@@ -48,7 +48,7 @@ export default function Navbar() {
               </Link>
             )}
 
-            <Link href={user ? "/dashboard" : "/auth"} className="hover:text-primary transition-colors text-foreground/60">
+            <Link href={user ? (user.roles?.includes('ROLE_ADMIN') || user.roles?.includes('ADMIN') ? "/admin" : "/dashboard") : "/auth"} className="hover:text-primary transition-colors text-foreground/60">
               <User className="w-4 h-4" />
             </Link>
 

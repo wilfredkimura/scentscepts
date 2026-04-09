@@ -61,8 +61,12 @@ function AuthContent() {
 
     try {
       if (isLogin) {
-        await login({ email: formData.email, password: formData.password });
-        router.push('/dashboard');
+        const res = await login({ email: formData.email, password: formData.password });
+        if (res.role === 'ROLE_ADMIN' || res.role === 'ADMIN') {
+          router.push('/admin');
+        } else {
+          router.push('/dashboard');
+        }
       } else {
         await register(formData);
         setIsLogin(true);

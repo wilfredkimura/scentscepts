@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 
 export default function Home() {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, hasRole } = useAuth();
   const router = useRouter();
 
   return (
@@ -31,7 +31,7 @@ export default function Home() {
           </Link>
           {!isLoading && user ? (
             <Link
-              href="/dashboard"
+              href={hasRole('ROLE_ADMIN') || hasRole('ADMIN') ? "/admin" : "/dashboard"}
               className="text-primary hover:text-primary/80 font-semibold transition-colors flex items-center gap-1"
             >
               Account <ArrowRight className="w-4 h-4" />
