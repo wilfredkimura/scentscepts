@@ -3,7 +3,7 @@ spring:
     name: scentcepts
   
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/scentcepts_db}
+    url: ${DB_URL:jdbc:postgresql://localhost:5433/scentcepts_db}
     username: ${DB_USER:scentcepts_user}
     password: ${DB_PASS:scentcepts}
     driver-class-name: org.postgresql.Driver

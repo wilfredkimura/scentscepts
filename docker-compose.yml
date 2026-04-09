@@ -36,7 +36,7 @@ services:
       POSTGRES_PASSWORD: scentcepts
       POSTGRES_DB: scentcepts_db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - scentcepts_pgdata:/var/lib/postgresql/data
     healthcheck:
