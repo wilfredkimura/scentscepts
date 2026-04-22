@@ -26,5 +26,6 @@ public interface OrderItemMapper {
     List<OrderItemDto> toDtoList(List<OrderItem> entities);
 
     /** Update an existing entity in-place from a DTO (for update operations) */
+    @org.mapstruct.Mapping(target = "id", ignore = true)
     void updateEntityFromDto(OrderItemDto dto, @MappingTarget OrderItem entity);
 }

@@ -26,5 +26,6 @@ public interface ScentOrderMapper {
     List<ScentOrderDto> toDtoList(List<ScentOrder> entities);
 
     /** Update an existing entity in-place from a DTO (for update operations) */
+    @org.mapstruct.Mapping(target = "id", ignore = true)
     void updateEntityFromDto(ScentOrderDto dto, @MappingTarget ScentOrder entity);
 }
