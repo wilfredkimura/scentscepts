@@ -1,9 +1,10 @@
 'use client';
 
-import { Sparkles, ShoppingBag, Wind, ArrowRight, Box, Database, Shield, Cloud } from 'lucide-react';
+import { Sparkles, ShoppingBag, Wind, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
+import Navbar from '@/components/Navbar';
 
 export default function Home() {
   const { user, isLoading, hasRole } = useAuth();
@@ -19,38 +20,9 @@ export default function Home() {
       <div className="glow-shape-1"></div>
       <div className="glow-shape-2"></div>
 
-      {/* Navbar Container */}
-      <nav className="relative z-10 max-w-7xl w-full mx-auto px-6 h-28 flex items-center justify-between">
-        <div className="flex flex-col items-center gap-0">
-          <span className="text-foreground font-light text-3xl tracking-[0.3em] uppercase">Scentcepts</span>
-          <span className="text-primary text-[10px] tracking-[0.5em] uppercase mt-1">House of Luxury</span>
-        </div>
-        <div className="flex items-center gap-8">
-          <Link href="/catalog" className="text-foreground/80 hover:text-primary text-sm tracking-widest uppercase transition-colors">
-            Collections
-          </Link>
-          {!isLoading && user ? (
-            <Link
-              href={hasRole('ROLE_ADMIN') || hasRole('ADMIN') ? "/admin" : "/dashboard"}
-              className="text-primary hover:text-primary/80 font-semibold transition-colors flex items-center gap-1"
-            >
-              Account <ArrowRight className="w-4 h-4" />
-            </Link>
-          ) : (
-            <>
-              <Link href="/auth" className="text-foreground/60 hover:text-foreground text-sm tracking-widest uppercase transition-colors">
-                Login
-              </Link>
-              <Link
-                href="/auth?registered=false"
-                className="bg-primary text-primary-foreground text-xs tracking-widest uppercase px-8 py-3 transition-all hover:bg-primary/90"
-              >
-                Join
-              </Link>
-            </>
-          )}
-        </div>
-      </nav>
+      <div className="glow-shape-2"></div>
+
+      <Navbar />
 
       {/* Hero Section */}
       <main className="relative z-10 flex-1 flex flex-col items-center justify-center px-6 text-center">
@@ -71,14 +43,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto">
             <Link
               href="/catalog"
-              className="w-full sm:w-auto bg-foreground text-background px-12 py-4 tracking-[0.2em] uppercase text-sm transition-all hover:bg-foreground/90 flex items-center justify-center gap-3"
+              className="w-full sm:w-auto bg-foreground text-background px-8 sm:px-12 py-4 tracking-[0.2em] uppercase text-[10px] sm:text-sm transition-all hover:bg-foreground/90 flex items-center justify-center gap-3"
             >
               Explore Collection <ShoppingBag className="w-4 h-4" />
             </Link>
             {!user && (
               <Link
                 href="/auth"
-                className="w-full sm:w-auto bg-transparent border border-foreground/20 text-foreground px-12 py-4 tracking-[0.2em] uppercase text-sm transition-all hover:border-primary hover:text-primary"
+                className="w-full sm:w-auto bg-transparent border border-foreground/20 text-foreground px-8 sm:px-12 py-4 tracking-[0.2em] uppercase text-[10px] sm:text-sm transition-all hover:border-primary hover:text-primary"
               >
                 Sign In
               </Link>
@@ -116,49 +88,10 @@ export default function Home() {
                 <h4 className="text-white text-xl font-light">Velvet Rose</h4>
               </div>
             </div>
-            <div className="group relative aspect-[16/9] overflow-hidden bg-secondary border border-border/50 flex flex-col items-center justify-center text-center p-8">
-              <Sparkles className="w-8 h-8 text-primary mb-4" />
-              <h4 className="text-xl font-light mb-2">Bespoke Curation</h4>
-              <p className="text-xs text-muted-foreground font-light max-w-[200px]">Find the perfect balance of notes for your personality.</p>
-              <Link href="/society" className="mt-6 text-[10px] uppercase font-bold tracking-widest text-primary hover:text-primary/70">Explore Society</Link>
-            </div>
+
           </div>
         </div>
       </section>
-
-      {/* Footer Tech Stack Badge */}
-      <footer className="relative z-10 pb-8 flex justify-center">
-        <div className="flex items-center gap-6 bg-card border border-border/50 rounded-2xl px-6 py-4 shadow-xl backdrop-blur-md">
-          <div className="flex items-center gap-2 border-r border-border pr-6">
-            <Box className="w-5 h-5 text-muted-foreground" />
-            <span className="text-sm font-semibold text-foreground">Powered By & Tech Stack</span>
-          </div>
-          
-          <div className="flex items-center gap-6 hidden sm:flex">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-foreground flex items-center justify-center">
-                <span className="text-background text-[10px] font-bold">N</span>
-              </div>
-              <span className="text-sm text-muted-foreground font-medium">Next.js</span>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Database className="w-5 h-5 text-primary" />
-              <span className="text-sm text-muted-foreground font-medium">Spring Boot</span>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground font-medium">JWT Auth</span>
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <Cloud className="w-5 h-5 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground font-medium">API Ready</span>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

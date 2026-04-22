@@ -1,12 +1,14 @@
 import type { NextConfig } from "next";
 
-const nextConfig = {
-
+const nextConfig: NextConfig = {
+  output: 'standalone',
   async rewrites() {
     return [
       {
         source: '/api/:path*',
-        destination: `http://localhost:8080/:path*`,
+        destination: process.env.NODE_ENV === 'production' 
+          ? `http://backend:8080/:path*` 
+          : `http://localhost:8080/:path*`,
       },
     ];
   },

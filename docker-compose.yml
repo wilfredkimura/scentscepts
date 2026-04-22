@@ -1,7 +1,6 @@
-version: "3.9"
 # scentcepts — Luxury Perfume Web Application
-# Run with: ./start.ps1   (recommended, includes port checks)
-# Or manually: docker-compose up
+# Now fully containerized! Run with: docker-compose up --build
+
 services:
   backend:
     build:
@@ -14,20 +13,29 @@ services:
       DB_URL: jdbc:postgresql://db:5432/scentcepts_db
       DB_USER: scentcepts_user
       DB_PASS: scentcepts
+      JWT_SECRET: ${JWT_SECRET:-404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+      CORS_ORIGINS: http://localhost:3000
     depends_on:
       db:
         condition: service_healthy
+    networks:
+      - scentcepts-network
 
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8080
     ports:
       - "3000:3000"
     environment:
-      NEXT_PUBLIC_API_URL: http://backend:8080
+      NEXT_PUBLIC_API_URL: http://localhost:8080
+      NODE_ENV: production
     depends_on:
       - backend
+    networks:
+      - scentcepts-network
 
   db:
     image: postgres:15
@@ -44,6 +52,12 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    networks:
+      - scentcepts-network
+
+networks:
+  scentcepts-network:
+    driver: bridge
 
 volumes:
   scentcepts_pgdata:

@@ -1,0 +1,413 @@
+2026-04-09 10:30:43,270 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2026-04-09 10:30:43,407 INFO o.s.b.StartupInfoLogger [main] Starting ScentceptsApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 7240 (C:\Users\kimura\Documents\scentscepts\backend\target\scentcepts-0.0.1-SNAPSHOT.jar started by kimura in C:\Users\kimura\Documents\scentscepts\backend)
+2026-04-09 10:30:43,408 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.4.2, Spring v6.2.2
+2026-04-09 10:30:43,410 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2026-04-09 10:30:45,272 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-09 10:30:45,484 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 192 ms. Found 5 JPA repository interfaces.
+2026-04-09 10:30:46,914 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2026-04-09 10:30:46,938 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-09 10:30:46,944 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2026-04-09 10:30:46,945 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-09 10:30:47,021 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2026-04-09 10:30:47,024 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3516 ms
+2026-04-09 10:30:47,517 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2026-04-09 10:30:49,018 ERROR o.s.b.w.e.t.TomcatStarter [main] Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthFilter' defined in URL [jar:nested:/C:/Users/kimura/Documents/scentscepts/backend/target/scentcepts-0.0.1-SNAPSHOT.jar/!BOOT-INF/classes/!/com/scentcepts/app/security/JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userDetailsServiceImpl' defined in URL [jar:nested:/C:/Users/kimura/Documents/scentscepts/backend/target/scentcepts-0.0.1-SNAPSHOT.jar/!BOOT-INF/classes/!/com/scentcepts/app/security/UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.scentcepts.app.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-04-09 10:30:49,089 INFO o.a.j.l.DirectJDKLog [main] Stopping service [Tomcat]
+2026-04-09 10:30:49,099 WARN o.s.c.s.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-04-09 10:30:49,122 INFO o.s.b.a.l.ConditionEvaluationReportLogger [main] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-09 10:30:49,150 ERROR o.s.b.SpringApplication [main] Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.scentcepts.app.ScentceptsApplication.main(ScentceptsApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:102)
+	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64)
+	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:147)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:107)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:516)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:222)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in URL [jar:nested:/C:/Users/kimura/Documents/scentscepts/backend/target/scentcepts-0.0.1-SNAPSHOT.jar/!BOOT-INF/classes/!/com/scentcepts/app/security/JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'userDetailsServiceImpl' defined in URL [jar:nested:/C:/Users/kimura/Documents/scentscepts/backend/target/scentcepts-0.0.1-SNAPSHOT.jar/!BOOT-INF/classes/!/com/scentcepts/app/security/UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.scentcepts.app.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:174)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:169)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:154)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4426)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:772)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1203)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1193)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:749)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:203)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:415)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:870)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:128)
+	... 18 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsServiceImpl' defined in URL [jar:nested:/C:/Users/kimura/Documents/scentscepts/backend/target/scentcepts-0.0.1-SNAPSHOT.jar/!BOOT-INF/classes/!/com/scentcepts/app/security/UserDetailsServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.scentcepts.app.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.scentcepts.app.repository.UserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1711)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1460)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 73 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 86 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: FATAL: password authentication failed for user "scentcepts_user"
+-----------------------------------------------------------------------------------------------------------
+SQL State  : 28P01
+Error Code : 0
+Message    : FATAL: password authentication failed for user "scentcepts_user"
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1812)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 98 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database: FATAL: password authentication failed for user "scentcepts_user"
+-----------------------------------------------------------------------------------------------------------
+SQL State  : 28P01
+Error Code : 0
+Message    : FATAL: password authentication failed for user "scentcepts_user"
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:71)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:137)
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:176)
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1859)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808)
+	... 107 common frames omitted
+Caused by: org.postgresql.util.PSQLException: FATAL: password authentication failed for user "scentcepts_user"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:704)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:213)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:59)
+	... 113 common frames omitted
+2026-04-09 11:11:19,865 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2026-04-09 11:11:20,145 INFO o.s.b.StartupInfoLogger [main] Starting ScentceptsApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 30292 (C:\Users\kimura\Documents\scentscepts\backend\target\scentcepts-0.0.1-SNAPSHOT.jar started by kimura in C:\Users\kimura\Documents\scentscepts\backend)
+2026-04-09 11:11:20,150 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.4.2, Spring v6.2.2
+2026-04-09 11:11:20,154 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2026-04-09 11:11:22,726 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-09 11:11:22,913 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 166 ms. Found 5 JPA repository interfaces.
+2026-04-09 11:11:24,874 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2026-04-09 11:11:24,897 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-09 11:11:24,903 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2026-04-09 11:11:24,904 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-09 11:11:25,009 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2026-04-09 11:11:25,013 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4684 ms
+2026-04-09 11:11:25,734 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2026-04-09 11:11:26,304 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@156324b
+2026-04-09 11:11:26,306 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2026-04-09 11:11:26,388 INFO o.f.c.i.l.s.Slf4jLog [main] Database: jdbc:postgresql://localhost:5433/scentcepts_db (PostgreSQL 15.17)
+2026-04-09 11:11:26,627 INFO o.f.c.i.l.s.Slf4jLog [main] Schema history table "public"."flyway_schema_history" does not exist yet
+2026-04-09 11:11:26,643 INFO o.f.c.i.l.s.Slf4jLog [main] Successfully validated 6 migrations (execution time 00:00.119s)
+2026-04-09 11:11:26,716 INFO o.f.c.i.l.s.Slf4jLog [main] Creating Schema History table "public"."flyway_schema_history" ...
+2026-04-09 11:11:26,905 INFO o.f.c.i.l.s.Slf4jLog [main] Current version of schema "public": << Empty Schema >>
+2026-04-09 11:11:26,940 INFO o.f.c.i.l.s.Slf4jLog [main] Migrating schema "public" to version "1 - init schema"
+2026-04-09 11:11:27,057 INFO o.f.c.i.l.s.Slf4jLog [main] Migrating schema "public" to version "2 - create brand table"
+2026-04-09 11:11:27,137 INFO o.f.c.i.l.s.Slf4jLog [main] Migrating schema "public" to version "3 - create product table"
+2026-04-09 11:11:27,218 INFO o.f.c.i.l.s.Slf4jLog [main] Migrating schema "public" to version "4 - create scentOrder table"
+2026-04-09 11:11:27,302 INFO o.f.c.i.l.s.Slf4jLog [main] Migrating schema "public" to version "5 - create orderItem table"
+2026-04-09 11:11:27,383 INFO o.f.c.i.l.s.Slf4jLog [main] Migrating schema "public" to version "6 - seed data"
+2026-04-09 11:11:27,453 INFO o.f.c.i.l.s.Slf4jLog [main] Successfully applied 6 migrations to schema "public", now at version v6 (execution time 00:00.235s)
+2026-04-09 11:11:27,760 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-09 11:11:27,978 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-04-09 11:11:28,129 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2026-04-09 11:11:29,081 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-09 11:11:29,219 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-09 11:11:29,269 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.17
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-09 11:11:31,838 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-09 11:11:33,128 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-09 11:11:34,212 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'jwtAuthFilter' configured for use
+2026-04-09 11:11:34,636 INFO o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer [main] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-04-09 11:11:34,638 WARN o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [main] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-04-09 11:11:35,182 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-09 11:11:36,120 DEBUG o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-09 11:11:37,097 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2026-04-09 11:11:37,159 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
+2026-04-09 11:11:37,188 INFO o.s.b.StartupInfoLogger [main] Started ScentceptsApplication in 18.555 seconds (process running for 19.803)
+2026-04-09 11:18:59,877 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m3s310ms214µs700ns).
+2026-04-09 11:19:56,743 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-09 11:19:56,772 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2026-04-09 11:19:56,925 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 148 ms
+2026-04-09 11:19:57,169 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing OPTIONS /api/v1/auth/login
+2026-04-09 11:19:57,381 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing POST /api/v1/auth/login
+2026-04-09 11:19:57,416 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-3] Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 11:19:57,427 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured POST /api/v1/auth/login
+2026-04-09 11:19:59,217 DEBUG o.s.s.a.d.AbstractUserDetailsAuthenticationProvider [http-nio-8080-exec-3] Failed to find user 'admin@example.com'
+2026-04-09 11:19:59,249 DEBUG o.s.s.w.a.Http403ForbiddenEntryPoint [http-nio-8080-exec-3] Pre-authenticated entry point called. Rejecting access
+2026-04-09 11:19:59,270 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing POST /error
+2026-04-09 11:19:59,274 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured POST /error
+2026-04-09 11:19:59,406 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-3] Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 11:20:09,722 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/auth/register
+2026-04-09 11:20:09,731 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing POST /api/v1/auth/register
+2026-04-09 11:20:09,734 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-4] Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 11:20:09,735 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured POST /api/v1/auth/register
+2026-04-09 11:20:14,198 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing POST /api/v1/auth/login
+2026-04-09 11:20:14,202 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-5] Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 11:20:14,203 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured POST /api/v1/auth/login
+2026-04-09 11:20:14,391 DEBUG o.s.s.a.d.AbstractUserDetailsAuthenticationProvider [http-nio-8080-exec-5] Authenticated user
+2026-04-09 11:20:15,984 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing OPTIONS /api/v1/users
+2026-04-09 11:20:15,985 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing OPTIONS /api/v1/users
+2026-04-09 11:20:15,997 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/users
+2026-04-09 11:20:16,359 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/users
+2026-04-09 11:20:16,453 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/users
+2026-04-09 11:20:16,489 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/users
+2026-04-09 11:20:21,981 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/users
+2026-04-09 11:20:22,016 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/users
+2026-04-09 11:20:22,047 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/users
+2026-04-09 11:20:22,078 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/users
+2026-04-09 11:20:25,020 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/users
+2026-04-09 11:20:25,066 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/users
+2026-04-09 11:20:25,101 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/users
+2026-04-09 11:20:25,134 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/users
+2026-04-09 11:21:42,785 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/users
+2026-04-09 11:21:42,952 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/users
+2026-04-09 11:21:43,067 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/users
+2026-04-09 11:21:43,098 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/users
+2026-04-09 11:21:44,621 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/users
+2026-04-09 11:21:44,655 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/users
+2026-04-09 11:21:44,679 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/users
+2026-04-09 11:21:44,710 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/users
+2026-04-09 11:21:57,409 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/users
+2026-04-09 11:21:57,447 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/users
+2026-04-09 11:21:57,472 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/users
+2026-04-09 11:21:57,504 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/users
+2026-04-09 11:21:58,559 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/users
+2026-04-09 11:21:58,599 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/users
+2026-04-09 11:21:58,628 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/users
+2026-04-09 11:21:58,661 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/users
+2026-04-09 11:21:59,366 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/users
+2026-04-09 11:21:59,404 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/users
+2026-04-09 11:21:59,428 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/users
+2026-04-09 11:21:59,455 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured GET /api/v1/users
+2026-04-09 11:29:24,012 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/users
+2026-04-09 11:29:24,650 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/users
+2026-04-09 11:29:24,807 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/users
+2026-04-09 11:29:24,831 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/users
+2026-04-09 11:29:35,677 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing OPTIONS /api/v1/products
+2026-04-09 11:29:35,710 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/products
+2026-04-09 11:29:35,710 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing OPTIONS /api/v1/products
+2026-04-09 11:29:35,711 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing OPTIONS /api/v1/brands
+2026-04-09 11:29:35,711 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/brands
+2026-04-09 11:29:35,717 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/brands
+2026-04-09 11:29:35,756 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/products
+2026-04-09 11:29:35,889 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured GET /api/v1/brands
+2026-04-09 11:29:36,908 WARN o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier [http-nio-8080-exec-5] Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-04-09 11:29:37,081 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing GET /api/v1/brands
+2026-04-09 11:29:37,081 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/products
+2026-04-09 11:29:37,111 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured GET /api/v1/brands
+2026-04-09 11:29:37,113 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/products
+2026-04-09 11:29:38,893 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing OPTIONS /api/v1/admin/stats
+2026-04-09 11:29:38,893 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing OPTIONS /api/v1/admin/stats
+2026-04-09 11:29:38,903 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/admin/stats
+2026-04-09 11:29:38,928 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/admin/stats
+2026-04-09 11:29:38,959 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-1] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 11:29:39,047 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-1] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 11:29:39,116 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/admin/stats
+2026-04-09 11:29:39,136 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/admin/stats
+2026-04-09 11:29:39,137 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-9] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 11:29:39,138 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-9] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 11:29:50,812 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/users
+2026-04-09 11:29:50,845 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/users
+2026-04-09 11:29:50,862 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/users
+2026-04-09 11:29:50,887 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/users
+2026-04-09 11:29:52,196 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing OPTIONS /api/v1/auth/logout
+2026-04-09 11:29:52,203 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing POST /api/v1/auth/logout
+2026-04-09 11:29:52,224 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured POST /api/v1/auth/logout
+2026-04-09 11:29:52,273 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing POST /error
+2026-04-09 11:29:52,274 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured POST /error
+2026-04-09 11:29:52,278 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-4] Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 11:30:00,867 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing POST /api/v1/auth/login
+2026-04-09 11:30:00,870 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-7] Set SecurityContextHolder to anonymous SecurityContext
+2026-04-09 11:30:00,870 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured POST /api/v1/auth/login
+2026-04-09 11:30:00,974 DEBUG o.s.s.a.d.AbstractUserDetailsAuthenticationProvider [http-nio-8080-exec-7] Authenticated user
+2026-04-09 11:30:01,080 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/users
+2026-04-09 11:30:01,105 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/users
+2026-04-09 11:30:01,117 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/users
+2026-04-09 11:30:01,140 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/users
+2026-04-09 11:30:20,940 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/brands
+2026-04-09 11:30:20,940 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/products
+2026-04-09 11:30:20,964 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/products
+2026-04-09 11:30:20,964 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/brands
+2026-04-09 11:30:21,036 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/brands
+2026-04-09 11:30:21,046 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/products
+2026-04-09 11:30:21,059 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/brands
+2026-04-09 11:30:21,070 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/products
+2026-04-09 11:30:22,166 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/admin/stats
+2026-04-09 11:30:22,191 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/admin/stats
+2026-04-09 11:30:22,193 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 11:30:22,201 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 11:30:22,227 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/admin/stats
+2026-04-09 11:30:22,253 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/admin/stats
+2026-04-09 11:30:22,255 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 11:30:22,256 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:01:56,766 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/brands
+2026-04-09 12:01:56,766 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/products
+2026-04-09 12:01:57,732 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/products
+2026-04-09 12:01:57,732 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/brands
+2026-04-09 12:01:57,976 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/products
+2026-04-09 12:01:57,976 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/brands
+2026-04-09 12:01:58,009 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/brands
+2026-04-09 12:01:58,013 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/products
+2026-04-09 12:03:04,227 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/admin/stats
+2026-04-09 12:03:04,261 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/admin/stats
+2026-04-09 12:03:04,288 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:03:04,320 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:03:04,386 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/admin/stats
+2026-04-09 12:03:04,418 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/admin/stats
+2026-04-09 12:03:04,421 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-10] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:03:04,422 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-10] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:03:15,199 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing OPTIONS /api/v1/brands?size=50
+2026-04-09 12:03:15,199 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/products?size=50
+2026-04-09 12:03:15,199 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing OPTIONS /api/v1/products?size=50
+2026-04-09 12:03:15,208 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing OPTIONS /api/v1/brands?size=50
+2026-04-09 12:03:15,215 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/products?size=50
+2026-04-09 12:03:15,225 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/brands?size=50
+2026-04-09 12:03:15,284 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured GET /api/v1/brands?size=50
+2026-04-09 12:03:15,335 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/products?size=50
+2026-04-09 12:03:15,400 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing GET /api/v1/brands?size=50
+2026-04-09 12:03:15,424 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured GET /api/v1/brands?size=50
+2026-04-09 12:03:15,424 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/products?size=50
+2026-04-09 12:03:15,453 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/products?size=50
+2026-04-09 12:03:38,541 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing OPTIONS /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d04
+2026-04-09 12:03:38,548 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d04
+2026-04-09 12:03:38,568 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured PUT /api/v1/products/f1b72680-7768-4f24-9b2f-4b0c7c8c8d04
+2026-04-09 12:03:39,451 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/products?size=50
+2026-04-09 12:03:39,481 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/products?size=50
+2026-04-09 12:03:49,480 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing OPTIONS /api/v1/brands?size=100&sort=name,asc
+2026-04-09 12:03:49,483 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing OPTIONS /api/v1/brands?size=100&sort=name,asc
+2026-04-09 12:03:49,498 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 12:03:49,563 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 12:03:49,703 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 12:03:49,746 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured GET /api/v1/brands?size=100&sort=name,asc
+2026-04-09 12:03:58,649 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing OPTIONS /api/v1/admin/users
+2026-04-09 12:03:58,649 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing OPTIONS /api/v1/admin/users
+2026-04-09 12:03:58,658 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/admin/users
+2026-04-09 12:03:58,699 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/admin/users
+2026-04-09 12:03:58,708 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.listUsers(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:03:58,727 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.listUsers(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:03:58,758 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/admin/users
+2026-04-09 12:03:58,795 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/admin/users
+2026-04-09 12:03:58,798 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.listUsers(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:03:58,799 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.listUsers(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-09 12:04:05,021 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing OPTIONS /api/v1/scentOrders?size=50
+2026-04-09 12:04:05,021 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/scentOrders?size=50
+2026-04-09 12:04:05,028 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/scentOrders?size=50
+2026-04-09 12:04:05,080 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/scentOrders?size=50
+2026-04-09 12:04:05,374 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/scentOrders?size=50
+2026-04-09 12:04:05,413 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/scentOrders?size=50
+2026-04-09 12:52:09,708 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m8s61ms183µs101ns).
+2026-04-09 13:46:34,337 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m23s795ms412µs800ns).
+2026-04-09 20:20:46,338 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h34m13s996ms74µs800ns).
+2026-04-09 20:31:23,043 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m6s276ms516µs700ns).
+2026-04-09 21:31:48,737 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57m53s4ms900µs100ns).
+2026-04-09 21:53:33,784 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m43s684ms947µs700ns).

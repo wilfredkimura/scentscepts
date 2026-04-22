@@ -1,0 +1,130 @@
+2026-04-10 01:54:12,864 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h31m35s860ms30µs200ns).
+2026-04-10 09:34:27,067 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h40m16s274ms380µs900ns).
+2026-04-10 09:44:35,700 INFO o.s.b.w.e.t.GracefulShutdown [SpringApplicationShutdownHook] Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-10 09:44:36,113 INFO o.s.b.w.e.t.GracefulShutdown [tomcat-shutdown] Graceful shutdown complete
+2026-04-10 09:44:36,406 INFO o.s.o.j.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-10 09:44:36,644 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2026-04-10 09:44:36,787 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2026-04-10 09:44:41,299 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 8.0.2.Final
+2026-04-10 09:44:41,495 INFO o.s.b.StartupInfoLogger [main] Starting ScentceptsApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 12540 (C:\Users\kimura\Documents\scentscepts\backend\target\scentcepts-0.0.1-SNAPSHOT.jar started by kimura in C:\Users\kimura\Documents\scentscepts\backend)
+2026-04-10 09:44:41,497 DEBUG o.s.b.StartupInfoLogger [main] Running with Spring Boot v3.4.2, Spring v6.2.2
+2026-04-10 09:44:41,500 INFO o.s.b.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2026-04-10 09:44:43,875 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-10 09:44:44,069 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 172 ms. Found 5 JPA repository interfaces.
+2026-04-10 09:44:45,997 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2026-04-10 09:44:46,034 INFO o.a.j.l.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2026-04-10 09:44:46,043 INFO o.a.j.l.DirectJDKLog [main] Starting service [Tomcat]
+2026-04-10 09:44:46,045 INFO o.a.j.l.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-04-10 09:44:46,147 INFO o.a.j.l.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2026-04-10 09:44:46,150 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4494 ms
+2026-04-10 09:44:46,795 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2026-04-10 09:44:47,368 INFO c.z.h.p.HikariPool [main] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2aac8ad7
+2026-04-10 09:44:47,374 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2026-04-10 09:44:47,508 INFO o.f.c.i.l.s.Slf4jLog [main] Database: jdbc:postgresql://localhost:5433/scentcepts_db (PostgreSQL 15.17)
+2026-04-10 09:44:48,031 INFO o.f.c.i.l.s.Slf4jLog [main] Successfully validated 6 migrations (execution time 00:00.352s)
+2026-04-10 09:44:48,152 INFO o.f.c.i.l.s.Slf4jLog [main] Current version of schema "public": 6
+2026-04-10 09:44:48,171 INFO o.f.c.i.l.s.Slf4jLog [main] Schema "public" is up to date. No migration necessary.
+2026-04-10 09:44:48,509 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-10 09:44:48,749 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 6.6.5.Final
+2026-04-10 09:44:48,843 INFO o.h.c.i.RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2026-04-10 09:44:49,591 INFO o.s.o.j.p.SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-10 09:44:49,746 WARN o.h.e.j.d.i.DialectFactoryImpl [main] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-10 09:44:49,784 INFO o.h.e.j.e.i.JdbcEnvironmentInitiator [main] HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.17
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-10 09:44:52,632 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-10 09:44:53,998 INFO o.s.o.j.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-10 09:44:54,738 DEBUG o.s.w.f.GenericFilterBean [main] Filter 'jwtAuthFilter' configured for use
+2026-04-10 09:44:55,091 INFO o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer [main] Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-04-10 09:44:55,092 WARN o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer [main] Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-04-10 09:44:55,586 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-10 09:44:56,513 DEBUG o.s.s.w.DefaultSecurityFilterChain [main] Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, JwtAuthFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2026-04-10 09:44:57,229 INFO o.a.j.l.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2026-04-10 09:44:57,284 INFO o.s.b.w.e.t.TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
+2026-04-10 09:44:57,308 INFO o.s.b.StartupInfoLogger [main] Started ScentceptsApplication in 17.529 seconds (process running for 19.046)
+2026-04-10 09:46:09,483 INFO o.a.j.l.DirectJDKLog [http-nio-8080-exec-4] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-10 09:46:09,492 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-4] Initializing Servlet 'dispatcherServlet'
+2026-04-10 09:46:09,523 INFO o.s.w.s.FrameworkServlet [http-nio-8080-exec-4] Completed initialization in 28 ms
+2026-04-10 09:46:09,642 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing OPTIONS /api/v1/products
+2026-04-10 09:46:09,642 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing OPTIONS /api/v1/products
+2026-04-10 09:46:09,642 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing OPTIONS /api/v1/brands
+2026-04-10 09:46:09,642 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/brands
+2026-04-10 09:46:09,786 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/brands
+2026-04-10 09:46:09,786 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/products
+2026-04-10 09:46:10,839 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/brands
+2026-04-10 09:46:10,839 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/products
+2026-04-10 09:46:11,152 WARN o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier [http-nio-8080-exec-8] Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-04-10 09:46:11,233 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing GET /api/v1/products
+2026-04-10 09:46:11,233 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Securing GET /api/v1/brands
+2026-04-10 09:46:11,261 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-5] Secured GET /api/v1/brands
+2026-04-10 09:46:11,261 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured GET /api/v1/products
+2026-04-10 09:46:12,204 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/products
+2026-04-10 09:46:12,206 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/brands
+2026-04-10 09:46:12,238 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/products
+2026-04-10 09:46:12,238 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/brands
+2026-04-10 09:46:12,260 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/brands
+2026-04-10 09:46:12,284 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/products
+2026-04-10 09:46:12,288 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/brands
+2026-04-10 09:46:12,314 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/products
+2026-04-10 09:46:22,499 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing OPTIONS /api/v1/admin/stats
+2026-04-10 09:46:22,499 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing OPTIONS /api/v1/admin/stats
+2026-04-10 09:46:22,508 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/admin/stats
+2026-04-10 09:46:22,554 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/admin/stats
+2026-04-10 09:46:22,563 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 09:46:22,601 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 09:46:23,584 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/admin/stats
+2026-04-10 09:46:23,618 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/admin/stats
+2026-04-10 09:46:23,620 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-8] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 09:46:23,622 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-8] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 09:50:09,304 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/admin/stats
+2026-04-10 09:50:10,817 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/admin/stats
+2026-04-10 09:50:10,851 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 09:50:10,880 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-3] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 09:50:11,025 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/admin/stats
+2026-04-10 09:50:11,099 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/admin/stats
+2026-04-10 09:50:11,102 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-1] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 09:50:11,105 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-1] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:05:39,057 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Securing GET /api/v1/admin/stats
+2026-04-10 10:05:39,722 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-6] Secured GET /api/v1/admin/stats
+2026-04-10 10:05:39,759 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:05:39,786 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-6] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:05:39,944 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Securing GET /api/v1/admin/stats
+2026-04-10 10:05:40,032 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-8] Secured GET /api/v1/admin/stats
+2026-04-10 10:05:40,035 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-8] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:05:40,036 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-8] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:16:32,507 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/brands
+2026-04-10 10:16:32,507 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/products
+2026-04-10 10:16:33,325 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/brands
+2026-04-10 10:16:33,344 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/products
+2026-04-10 10:16:33,703 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/brands
+2026-04-10 10:16:33,706 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/products
+2026-04-10 10:16:33,762 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/products
+2026-04-10 10:16:33,763 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/brands
+2026-04-10 10:16:40,919 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Securing GET /api/v1/admin/stats
+2026-04-10 10:16:41,077 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-4] Secured GET /api/v1/admin/stats
+2026-04-10 10:16:41,086 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-4] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:16:41,096 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-4] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:16:41,149 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Securing GET /api/v1/admin/stats
+2026-04-10 10:16:41,180 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-2] Secured GET /api/v1/admin/stats
+2026-04-10 10:16:41,182 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-2] Authorizing method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:16:41,183 DEBUG o.s.s.a.m.AuthorizationManagerBeforeMethodInterceptor [http-nio-8080-exec-2] Authorized method invocation ReflectiveMethodInvocation: public org.springframework.http.ResponseEntity com.scentcepts.app.controller.AdminController.stats(); target is of class [com.scentcepts.app.controller.AdminController]
+2026-04-10 10:25:42,645 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Securing GET /api/v1/products
+2026-04-10 10:25:42,645 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Securing GET /api/v1/brands
+2026-04-10 10:25:43,276 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-9] Secured GET /api/v1/products
+2026-04-10 10:25:43,327 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-1] Secured GET /api/v1/brands
+2026-04-10 10:25:43,501 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Securing GET /api/v1/brands
+2026-04-10 10:25:43,551 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Securing GET /api/v1/products
+2026-04-10 10:25:43,551 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-10] Secured GET /api/v1/brands
+2026-04-10 10:25:43,593 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-3] Secured GET /api/v1/products
+2026-04-10 13:17:41,737 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h9m52s723ms452µs200ns).
+2026-04-10 19:10:18,578 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h52m38s997ms673µs).
+2026-04-10 19:24:58,579 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m39s773ms199µs400ns).
+2026-04-10 20:58:01,852 WARN c.z.h.p.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h33m3s285ms382µs500ns).

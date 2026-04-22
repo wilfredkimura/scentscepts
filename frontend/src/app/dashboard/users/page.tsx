@@ -7,15 +7,15 @@ import { useState } from 'react';
 import { Trash2, UserCog, Mail, Calendar, ShieldCheck } from 'lucide-react';
 
 export default function UsersPage() {
-  const { data: initialUsers, isLoading, error, mutate } = useFetch<UserDto[]>('/api/v1/users');
-  const [deletingId, setDeletingId] = useState<number | null>(null);
+  const { data: initialUsers, isLoading, error, refetch } = useFetch<UserDto[]>('/api/v1/users');
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this user?')) return;
     setDeletingId(id);
     try {
       await usersApi.delete(id);
-      mutate(); // Refresh the list
+      refetch(); // Refresh the list
     } catch (err) {
       alert('Failed to delete user.');
       console.error(err);
@@ -45,7 +45,7 @@ export default function UsersPage() {
         ) : error ? (
           <div className="p-8 text-center text-destructive">
             <h3 className="font-semibold text-lg">Error loading users</h3>
-            <p className="text-sm mt-1">{error.message || 'Unknown error occurred.'}</p>
+            <p className="text-sm mt-1">{error || 'Unknown error occurred.'}</p>
           </div>
         ) : !initialUsers?.length ? (
           <div className="p-8 text-center text-muted-foreground">

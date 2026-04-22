@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingBag, User, Search, Menu } from 'lucide-react';
+import { ShoppingBag, User, Search, Menu, X } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useCart } from '@/hooks/useCart';
 import { useState } from 'react';
@@ -11,6 +11,7 @@ export default function Navbar() {
   const { user } = useAuth();
   const { cart } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
@@ -18,15 +19,18 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Left: Mobile Menu & Search */}
           <div className="flex items-center gap-4 lg:hidden">
-            <Menu className="w-6 h-6 text-foreground" />
+            <button 
+              onClick={() => setIsMenuOpen(true)}
+              className="p-2 -ml-2 hover:text-primary transition-colors"
+              aria-label="Open menu"
+            >
+              <Menu className="w-6 h-6 text-foreground" />
+            </button>
           </div>
           
           <div className="hidden lg:flex items-center gap-6">
             <Link href="/catalog" className="text-xs tracking-[0.2em] uppercase hover:text-primary transition-colors">
               Collections
-            </Link>
-            <Link href="/about" className="text-xs tracking-[0.2em] uppercase hover:text-primary transition-colors">
-              Our Story
             </Link>
           </div>
 
@@ -67,6 +71,57 @@ export default function Navbar() {
         </div>
       </nav>
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[100] lg:hidden">
+          {/* Backdrop */}
+          <div 
+            className="absolute inset-0 bg-background/95 backdrop-blur-md transition-opacity"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Menu Content */}
+          <div className="relative h-full w-full flex flex-col p-8">
+            <div className="flex items-center justify-between mb-20">
+              <span className="text-xl font-light tracking-[0.3em] uppercase">Scentcepts</span>
+              <button 
+                onClick={() => setIsMenuOpen(false)}
+                className="p-2 hover:text-primary transition-colors"
+                aria-label="Close menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <nav className="flex flex-col gap-10">
+              <Link 
+                href="/catalog" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl font-light tracking-[0.2em] uppercase hover:text-primary transition-colors"
+              >
+                Collections
+              </Link>
+              
+              <div className="h-px bg-border w-12 my-4" />
+
+              <Link 
+                href={user ? (user.roles?.includes('ROLE_ADMIN') || user.roles?.includes('ADMIN') ? "/admin" : "/dashboard") : "/auth"}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-bold tracking-[0.3em] uppercase text-primary"
+              >
+                {user ? 'My Account' : 'Sign In / Join'}
+              </Link>
+            </nav>
+
+            <div className="mt-auto pt-10">
+              <p className="text-[10px] uppercase tracking-[0.5em] text-muted-foreground font-light leading-relaxed">
+                Authorized Retailer of <br /> Luxury Niche Fragrances
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
