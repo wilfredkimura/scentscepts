@@ -47,9 +47,6 @@ services:
     runtime: docker
     dockerContext: ./frontend
     dockerfilePath: ./frontend/Dockerfile
-    dockerBuildArgs:
-      - key: NEXT_PUBLIC_API_URL
-        value: https://scentcepts-api.onrender.com
     envVars:
       - key: NEXT_PUBLIC_API_URL
         value: https://scentcepts-api.onrender.com
