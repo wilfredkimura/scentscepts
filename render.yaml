@@ -1,0 +1,57 @@
+databases:
+  - name: scentcepts-db
+    plan: free # Change to standard for production scale
+    databaseName: scentcepts_db
+    user: scentcepts_user
+
+services:
+  # Backend: Spring Boot Web Service
+  - type: web
+    name: scentcepts-api
+    runtime: docker
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    envVars:
+      - key: DB_URL
+        value: jdbc:postgresql://${SCENTCEPTS_DB_HOST}:${SCENTCEPTS_DB_PORT}/${SCENTCEPTS_DB_DATABASE}
+      - key: DB_USER
+        fromDatabase:
+          name: scentcepts-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: scentcepts-db
+          property: password
+      - key: SCENTCEPTS_DB_HOST
+        fromDatabase:
+          name: scentcepts-db
+          property: host
+      - key: SCENTCEPTS_DB_PORT
+        fromDatabase:
+          name: scentcepts-db
+          property: port
+      - key: SCENTCEPTS_DB_DATABASE
+        fromDatabase:
+          name: scentcepts-db
+          property: database
+      - key: JWT_SECRET
+        generateValue: true # Generate a random secret if not provided
+      - key: SPRING_PROFILES_ACTIVE
+        value: docker
+      - key: CORS_ORIGINS
+        value: https://scentcepts-ui.onrender.com # Placeholder, will be updated by Render if needed
+
+  # Frontend: Next.js Web Service
+  - type: web
+    name: scentcepts-ui
+    runtime: docker
+    dockerContext: ./frontend
+    dockerfilePath: ./frontend/Dockerfile
+    dockerBuildArgs:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://scentcepts-api.onrender.com
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://scentcepts-api.onrender.com
+      - key: NODE_ENV
+        value: production

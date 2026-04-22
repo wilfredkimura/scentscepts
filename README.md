@@ -176,6 +176,33 @@ To receive orders on your business WhatsApp number:
 
 ---
 
+## 🚀 Deployment (Render)
+
+This platform is ready to be deployed to [Render](https://render.com) using the included `render.yaml` Blueprint.
+
+### Steps to Deploy:
+1. **Push your code to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Add Render deployment configuration"
+   git push origin main
+   ```
+2. **Create a new Blueprint on Render**:
+   - Log in to [Render Dashboard](https://dashboard.render.com).
+   - Click **New +** > **Blueprint**.
+   - Connect your GitHub repository.
+3. **Configure & Launch**:
+   - Render will detect the `render.yaml` file.
+   - It will automatically create the **Managed PostgreSQL**, **Backend API**, and **Frontend UI**.
+   - You may be prompted to enter a `JWT_SECRET` (if you want to provide one manually).
+
+### Production Architecture on Render:
+- **Database**: Managed PostgreSQL 15.
+- **Backend**: Dockerized Spring Boot (Internal URL: `scentcepts-api.onrender.com`).
+- **Frontend**: Dockerized Next.js (Standalone mode).
+
+---
+
 ## 🌍 Environment Variables
 
 All defaults work out of the box. Override via a `.env` file in the project root if needed:
