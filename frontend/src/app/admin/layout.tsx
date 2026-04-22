@@ -86,26 +86,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             })}
           </nav>
           
-<<<<<<< HEAD
-          {/* Mobile nav placeholder */}
-          <nav className="md:hidden flex overflow-x-auto p-4 gap-2 border-b border-border/50">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                 <Link key={item.href} href={item.href} className={`px-4 py-2 text-[10px] uppercase tracking-widest whitespace-nowrap border ${isActive ? 'border-primary text-primary' : 'border-border text-muted-foreground'}`}>{item.name}</Link>
-              )
-            })}
-            <Link href="/" className="px-4 py-2 text-[10px] uppercase tracking-widest whitespace-nowrap border border-destructive/30 text-destructive hover:bg-destructive/10 transition-all">Back to Site</Link>
-          </nav>
-
-          <div className="p-4 border-t border-border/50 hidden md:block">
-            <Link href="/" className="flex items-center gap-3 px-4 py-3 text-xs uppercase tracking-widest text-muted-foreground hover:text-destructive transition-all">
-              <LogOut className="w-4 h-4" /> Exit Admin
-=======
           <div className="p-6 border-t border-border/50 mt-auto">
             <Link href="/" className="flex items-center gap-4 px-4 py-4 text-[10px] uppercase tracking-widest text-muted-foreground hover:text-destructive transition-all group">
               <LogOut className="w-4 h-4 transition-transform group-hover:-translate-x-1" /> Exit Admin
->>>>>>> 1db9daf82f12e959c5963850e0002a2e2b45b780
             </Link>
           </div>
         </aside>

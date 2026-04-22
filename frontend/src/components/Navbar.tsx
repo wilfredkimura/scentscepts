@@ -1,9 +1,7 @@
+'use client';
+
 import Link from 'next/link';
-<<<<<<< HEAD
-import { ShoppingBag, User, Search, Menu, X } from 'lucide-react';
-=======
 import { ShoppingBag, User, Search, Menu, X, ArrowRight } from 'lucide-react';
->>>>>>> 1db9daf82f12e959c5963850e0002a2e2b45b780
 import { useAuth } from '@/hooks/useAuth';
 import { useCart } from '@/hooks/useCart';
 import { useState, useEffect } from 'react';
@@ -14,19 +12,6 @@ export default function Navbar() {
   const { cart } = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-<<<<<<< HEAD
-
-  return (
-    <>
-      <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          {/* Left: Mobile Menu & Search */}
-          <div className="flex items-center gap-4 lg:hidden">
-            <button 
-              onClick={() => setIsMenuOpen(true)}
-              className="p-2 -ml-2 hover:text-primary transition-colors"
-              aria-label="Open menu"
-=======
 
   // Prevent scroll when menu is open
   useEffect(() => {
@@ -45,7 +30,6 @@ export default function Navbar() {
             <button 
               onClick={() => setIsMenuOpen(true)}
               className="p-2 hover:bg-secondary transition-colors"
->>>>>>> 1db9daf82f12e959c5963850e0002a2e2b45b780
             >
               <Menu className="w-6 h-6 text-foreground" />
             </button>
@@ -56,12 +40,6 @@ export default function Navbar() {
             <Link href="/catalog" className="text-[10px] tracking-[0.2em] uppercase font-bold hover:text-primary transition-colors">
               Collections
             </Link>
-<<<<<<< HEAD
-=======
-            <Link href="/society" className="text-[10px] tracking-[0.2em] uppercase font-bold hover:text-primary transition-colors">
-              Society
-            </Link>
->>>>>>> 1db9daf82f12e959c5963850e0002a2e2b45b780
           </div>
 
           {/* Center: Logo */}
@@ -120,8 +98,6 @@ export default function Navbar() {
               {[
                 { name: 'Home', href: '/' },
                 { name: 'Collections', href: '/catalog' },
-                { name: 'Scent Society', href: '/society' },
-                { name: 'About', href: '/about' },
               ].map((item) => (
                 <Link 
                   key={item.name} 
@@ -170,57 +146,6 @@ export default function Navbar() {
       </div>
 
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
-
-      {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-[100] lg:hidden">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-background/95 backdrop-blur-md transition-opacity"
-            onClick={() => setIsMenuOpen(false)}
-          />
-          
-          {/* Menu Content */}
-          <div className="relative h-full w-full flex flex-col p-8">
-            <div className="flex items-center justify-between mb-20">
-              <span className="text-xl font-light tracking-[0.3em] uppercase">Scentcepts</span>
-              <button 
-                onClick={() => setIsMenuOpen(false)}
-                className="p-2 hover:text-primary transition-colors"
-                aria-label="Close menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <nav className="flex flex-col gap-10">
-              <Link 
-                href="/catalog" 
-                onClick={() => setIsMenuOpen(false)}
-                className="text-2xl font-light tracking-[0.2em] uppercase hover:text-primary transition-colors"
-              >
-                Collections
-              </Link>
-              
-              <div className="h-px bg-border w-12 my-4" />
-
-              <Link 
-                href={user ? (user.roles?.includes('ROLE_ADMIN') || user.roles?.includes('ADMIN') ? "/admin" : "/dashboard") : "/auth"}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-sm font-bold tracking-[0.3em] uppercase text-primary"
-              >
-                {user ? 'My Account' : 'Sign In / Join'}
-              </Link>
-            </nav>
-
-            <div className="mt-auto pt-10">
-              <p className="text-[10px] uppercase tracking-[0.5em] text-muted-foreground font-light leading-relaxed">
-                Authorized Retailer of <br /> Luxury Niche Fragrances
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }
