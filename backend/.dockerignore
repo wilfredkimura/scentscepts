@@ -1,0 +1,21 @@
+# Build artifacts
+target/
+logs/
+*.log
+
+# IDE / tooling
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Docs & misc
+*.md
+.sprygen/
+.mvn/wrapper/maven-wrapper.jar

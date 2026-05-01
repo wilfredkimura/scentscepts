@@ -1,0 +1,13 @@
+# Dependencies (re-installed in container)
+node_modules/
+.next/
+
+# Git
+.git/
+.gitignore
+
+# Docs
+*.md
+
+# IDE
+.vscode/

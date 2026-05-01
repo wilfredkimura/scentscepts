@@ -38,7 +38,7 @@ services:
       - scentcepts-network
 
   db:
-    image: postgres:15
+    image: postgres:15-alpine
     environment:
       POSTGRES_USER: scentcepts_user
       POSTGRES_PASSWORD: scentcepts

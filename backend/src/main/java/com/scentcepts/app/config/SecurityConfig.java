@@ -44,8 +44,7 @@ public class SecurityConfig {
                 .requestMatchers("/error").permitAll()
                 // Public home / static assets
                 .requestMatchers("/", "/index.html", "/favicon.ico", "/assets/**").permitAll()
-                .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-                .requestMatchers("/actuator/**").permitAll()
+
                 // Admin endpoints
                 .requestMatchers("/api/v1/admin/**").hasAuthority("ROLE_ADMIN")
                 .requestMatchers(org.springframework.http.HttpMethod.POST, "/api/v1/products/**", "/api/v1/brands/**").hasAuthority("ROLE_ADMIN")
