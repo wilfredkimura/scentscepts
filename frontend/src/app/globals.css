@@ -4,65 +4,66 @@
 
 @layer base {
   :root {
-    --background: 40 20% 98%; /* Soft Nude/Off-white */
-    --foreground: 0 0% 0%;   /* Deep Black */
+    --background: 0 0% 5%; /* Obsidian #0D0D0D */
+    --foreground: 28 39% 84%; /* Warm Nude #E8D5C4 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 10%; /* Charcoal Gray #1A1A1A */
+    --card-foreground: 28 39% 84%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 28 39% 84%;
 
-    --primary: 35 30% 62%;  /* Muted Gold #bfa37e */
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 64% 52%;  /* Champagne Gold #D4AF37 */
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 40 10% 90%; /* Light Nude */
-    --secondary-foreground: 0 0% 0%;
-
-    --muted: 40 10% 94%;
-    --muted-foreground: 0 0% 40%;
-
-    --accent: 35 30% 62%;
-    --accent-foreground: 0 0% 0%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 35 10% 88%;
-    --input: 35 10% 88%;
-    --ring: 35 30% 62%;
-
-    --radius: 0rem; /* Sharp edges for luxury feel */
-  }
-
-  .dark {
-    --background: 0 0% 4%;   /* Absolute Black */
-    --foreground: 40 20% 98%; /* Soft Nude */
-
-    --card: 0 0% 6%;
-    --card-foreground: 40 20% 98%;
-
-    --popover: 0 0% 3%;
-    --popover-foreground: 40 20% 98%;
-
-    --primary: 35 30% 62%;  /* Luxury Gold */
-    --primary-foreground: 0 0% 0%;
-
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 20% 98%;
+    --secondary: 28 39% 84%; /* Warm Nude */
+    --secondary-foreground: 0 0% 5%;
 
     --muted: 0 0% 15%;
-    --muted-foreground: 40 10% 70%;
+    --muted-foreground: 28 20% 70%;
 
-    --accent: 35 30% 62%;
-    --accent-foreground: 40 20% 98%;
+    --accent: 45 64% 52%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 28 39% 84%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 64% 52%;
+
+    --radius: 0rem; /* Strictly sharp corners */
+  }
+
+  /* Since the design is "Modern Noir", we keep it dark even in "light" mode or just force dark */
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 28 39% 84%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 28 39% 84%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 28 39% 84%;
+
+    --primary: 45 64% 52%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 28 39% 84%;
+    --secondary-foreground: 0 0% 5%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 28 20% 70%;
+
+    --accent: 45 64% 52%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 40 20% 98%;
+    --destructive-foreground: 28 39% 84%;
 
-    --border: 35 20% 20%;
-    --input: 35 20% 20%;
-    --ring: 35 30% 62%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 64% 52%;
   }
 }
 
@@ -126,6 +127,67 @@
 }
 
 @layer utilities {
+  .text-display-xl {
+    font-family: var(--font-noto-serif);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .text-headline-lg {
+    font-family: var(--font-noto-serif);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+  }
+  .text-headline-md {
+    font-family: var(--font-noto-serif);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .text-body-lg {
+    font-family: var(--font-manrope);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+  }
+  .text-body-md {
+    font-family: var(--font-manrope);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .text-label-caps {
+    font-family: var(--font-manrope);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.0;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .section-gap {
+    margin-top: 160px;
+    margin-bottom: 160px;
+  }
+
+  .container-wide {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @media (min-width: 1024px) {
+    .container-wide {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+
   .text-gold-gradient {
     background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
     -webkit-background-clip: text;
@@ -133,7 +195,7 @@
   }
   
   .bg-luxury-gold {
-    background: linear-gradient(45deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #aa771c 100%);
+    background: linear-gradient(45deg, #D4AF37 0%, #F5E6AD 45%, #B38728 70%, #AA771C 100%);
   }
 
   .animate-float {
@@ -144,5 +206,13 @@
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
+  }
+
+  .hover-card-luxury {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hover-card-luxury:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
   }
 }

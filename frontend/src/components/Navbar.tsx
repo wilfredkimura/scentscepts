@@ -22,10 +22,18 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border/50 transition-all duration-300">
+        <div className="container-wide h-20 flex items-center justify-between">
           
-          {/* Left: Mobile Menu Trigger */}
+          {/* Left: Desktop Links */}
+          <div className="hidden lg:flex items-center gap-12">
+            <Link href="/catalog" className="text-label-caps hover:text-primary transition-all relative group py-2">
+              Collections
+              <span className="absolute bottom-0 left-0 w-0 h-px bg-primary transition-all group-hover:w-full" />
+            </Link>
+          </div>
+
+          {/* Mobile Menu Trigger */}
           <div className="flex items-center lg:hidden">
             <button 
               onClick={() => setIsMenuOpen(true)}
@@ -35,21 +43,14 @@ export default function Navbar() {
             </button>
           </div>
           
-          {/* Desktop Links */}
-          <div className="hidden lg:flex items-center gap-8">
-            <Link href="/catalog" className="text-[10px] tracking-[0.2em] uppercase font-bold hover:text-primary transition-colors">
-              Collections
-            </Link>
-          </div>
-
           {/* Center: Logo */}
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center">
-            <span className="text-xl sm:text-2xl font-light tracking-[0.3em] uppercase">Scentcepts</span>
-            <span className="text-[7px] sm:text-[8px] tracking-[0.4em] uppercase text-primary -mt-1 hidden sm:block">House of Luxury</span>
+            <span className="text-2xl font-serif font-light tracking-[0.4em] uppercase">Scentcepts</span>
+            <span className="text-[8px] tracking-[0.5em] uppercase text-primary -mt-1 hidden sm:block">House of Luxury</span>
           </Link>
 
           {/* Right: Actions */}
-          <div className="flex items-center gap-2 sm:gap-6">
+          <div className="flex items-center gap-2 sm:gap-8">
             <button className="hidden md:block hover:text-primary transition-colors text-foreground/60 p-2">
               <Search className="w-4 h-4" />
             </button>
@@ -64,7 +65,7 @@ export default function Navbar() {
             >
               <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
               {cart.length > 0 && (
-                <span className="absolute top-1 right-1 bg-primary text-primary-foreground text-[8px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">
+                <span className="absolute top-1 right-1 bg-primary text-primary-foreground text-[8px] w-3.5 h-3.5 flex items-center justify-center font-bold">
                   {cart.length}
                 </span>
               )}

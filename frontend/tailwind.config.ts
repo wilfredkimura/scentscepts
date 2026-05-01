@@ -17,6 +17,15 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['var(--font-noto-serif)', 'serif'],
+        sans: ['var(--font-manrope)', 'sans-serif'],
+      },
+      spacing: {
+        'gutter': '32px',
+        'margin-desktop': '80px',
+        'section-gap': '160px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

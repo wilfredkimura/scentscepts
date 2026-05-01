@@ -1,10 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Noto_Serif, Manrope } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { CartProvider } from '@/hooks/useCart';
 
-const inter = Inter({ subsets: ['latin'] });
+const notoSerif = Noto_Serif({ 
+  subsets: ['latin'],
+  variable: '--font-noto-serif',
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+});
 
 export const metadata: Metadata = {
   title: 'Scentcepts | Luxury Perfume Decants & Full Bottles',
@@ -18,10 +26,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary`}>
+      <body className={`${notoSerif.variable} ${manrope.variable} font-sans min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

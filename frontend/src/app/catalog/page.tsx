@@ -112,39 +112,39 @@ export default function Catalog() {
 
           {/* Product Grid */}
           <section className="flex-1">
-            <div className="flex items-end justify-between mb-12">
-              <div className="space-y-2">
-                <span className="text-primary text-[10px] tracking-[0.4em] uppercase font-bold">Curated Selection</span>
-                <h1 className="text-3xl sm:text-4xl font-light tracking-tight text-foreground leadig-none">Our Collection</h1>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-8 mb-16">
+              <div className="space-y-4">
+                <span className="text-label-caps text-primary">Curated Selection</span>
+                <h1 className="text-headline-lg text-foreground leading-none">The Archive</h1>
               </div>
               
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 <button 
                   onClick={() => setShowFilters(true)}
-                  className="md:hidden flex items-center justify-center w-10 h-10 border border-border text-foreground bg-card"
+                  className="md:hidden flex items-center justify-center w-12 h-12 border border-border/30 text-foreground bg-card"
                 >
-                  <Filter className="w-4 h-4" />
+                  <Filter className="w-5 h-5" />
                 </button>
-                <div className="hidden sm:block text-[9px] uppercase tracking-[0.2em] text-muted-foreground font-bold bg-secondary/20 px-4 py-2 border border-border/50">
+                <div className="hidden sm:block text-label-caps text-foreground/40 px-6 py-3 border border-border/30">
                   {products.length} Fragrances Found
                 </div>
               </div>
             </div>
 
             {loading ? (
-              <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 animate-pulse">
-                {[1,2,3,4,5,6].map(i => <div key={i} className="aspect-[3/4] bg-secondary" />)}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 animate-pulse">
+                {[1,2,3,4,5,6].map(i => <div key={i} className="aspect-[4/5] bg-card border border-border/30" />)}
               </div>
             ) : products.length > 0 ? (
-              <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
                 {products.map(product => (
                   <ProductCard key={product.id} product={product} />
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center py-32 text-center border border-dashed border-border/50">
-                <p className="text-muted-foreground mb-6 uppercase tracking-widest text-xs">No fragrances match your selection.</p>
-                <button onClick={() => { setSelectedBrand(null); setSearch(''); }} className="text-primary text-[10px] uppercase tracking-widest font-bold border-b-2 border-primary pb-1">Reset Filters</button>
+              <div className="flex flex-col items-center justify-center py-32 text-center border border-border/30">
+                <p className="text-label-caps text-foreground/40 mb-8">No fragrances match your selection.</p>
+                <button onClick={() => { setSelectedBrand(null); setSearch(''); }} className="text-label-caps text-primary border-b border-primary pb-2">Reset Filters</button>
               </div>
             )}
           </section>
