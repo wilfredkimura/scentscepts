@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingBag, User, Search, Menu, X, ArrowRight } from 'lucide-react';
+import { ShoppingBag, User, Search, Menu, X, ArrowRight, LogOut } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 import { useAuth } from '@/hooks/useAuth';
 import { useCart } from '@/hooks/useCart';
 import { useState, useEffect } from 'react';
@@ -51,6 +52,8 @@ export default function Navbar() {
 
           {/* Right: Actions */}
           <div className="flex items-center gap-2 sm:gap-8">
+            <ThemeToggle />
+            
             <button className="hidden md:block hover:text-primary transition-colors text-foreground/60 p-2">
               <Search className="w-4 h-4" />
             </button>
@@ -58,6 +61,16 @@ export default function Navbar() {
             <Link href={user ? (user.roles?.includes('ROLE_ADMIN') || user.roles?.includes('ADMIN') ? "/admin" : "/dashboard") : "/auth"} className="hover:text-primary transition-colors text-foreground/60 p-2">
               <User className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
+
+            {user && (
+              <button 
+                onClick={logout}
+                className="hover:text-destructive transition-colors text-foreground/60 p-2"
+                title="Logout"
+              >
+                <LogOut className="w-4 h-4 sm:w-5 sm:h-5" />
+              </button>
+            )}
 
             <button 
               onClick={() => setIsCartOpen(true)}
@@ -131,6 +144,15 @@ export default function Navbar() {
                   >
                     Manage Account
                   </Link>
+                  <button 
+                    onClick={() => {
+                      logout();
+                      setIsMenuOpen(false);
+                    }}
+                    className="block w-full text-center py-4 bg-background text-destructive text-[10px] font-bold uppercase tracking-widest border border-border"
+                  >
+                    Sign Out
+                  </button>
                 </div>
               ) : (
                 <Link 

@@ -4,32 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%; /* Obsidian #0D0D0D */
-    --foreground: 28 39% 84%; /* Warm Nude #E8D5C4 */
+    /* Light Mode: White, Cream and Gold Theme */
+    --background: 40 33% 98%; /* Cream White */
+    --foreground: 0 0% 10%; /* Charcoal */
 
-    --card: 0 0% 10%; /* Charcoal Gray #1A1A1A */
-    --card-foreground: 28 39% 84%;
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 28 39% 84%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
     --primary: 45 64% 52%;  /* Champagne Gold #D4AF37 */
-    --primary-foreground: 0 0% 5%;
+    --primary-foreground: 0 0% 100%; /* White text on Gold */
 
-    --secondary: 28 39% 84%; /* Warm Nude */
-    --secondary-foreground: 0 0% 5%;
+    --secondary: 40 20% 90%; /* Light Cream */
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 28 20% 70%;
+    --muted: 40 20% 95%; /* Very Light Cream */
+    --muted-foreground: 40 10% 40%;
 
     --accent: 45 64% 52%;
-    --accent-foreground: 0 0% 5%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 28 39% 84%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 40 20% 85%;
+    --input: 40 20% 85%;
     --ring: 45 64% 52%;
 
     --radius: 0rem; /* Strictly sharp corners */
