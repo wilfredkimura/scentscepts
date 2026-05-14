@@ -2,12 +2,19 @@
 
 import { useFetch } from '@/hooks/useFetch';
 import { ShoppingCart, Search, Eye, Filter, RefreshCw } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function AdminOrdersPage() {
   const { data: response, isLoading, refetch } = useFetch<any>('/api/v1/scentOrders?size=50');
   const orders = response?.content || [];
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      refetch();
+    }, 10000); // 10 seconds auto-refresh
+    return () => clearInterval(interval);
+  }, [refetch]);
 
   const filteredOrders = orders.filter((o: any) => 
     o.id.toLowerCase().includes(searchTerm.toLowerCase()) || 

@@ -65,14 +65,14 @@ function AuthContent() {
         if (res.role === 'ROLE_ADMIN' || res.role === 'ADMIN') {
           router.push('/admin');
         } else {
-          router.push('/dashboard');
+          router.push('/');
         }
       } else {
         await register(formData);
         setIsLogin(true);
         setError('');
         // Show success or just switch to login
-        router.push('/auth?registered=true');
+        router.push('/login?registered=true');
       }
     } catch (err: any) {
       const msg = err?.response?.data?.message || 'Authentication failed. Please try again.';

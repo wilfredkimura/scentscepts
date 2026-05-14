@@ -42,7 +42,7 @@ export default function Home() {
             </Link>
             {!user && (
               <Link
-                href="/auth"
+                href="/login"
                 className="w-full sm:w-auto bg-transparent border border-primary/30 text-primary px-16 py-5 text-label-caps transition-all hover:border-primary hover:bg-primary/5"
               >
                 Sign In

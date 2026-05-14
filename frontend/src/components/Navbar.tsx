@@ -58,7 +58,7 @@ export default function Navbar() {
               <Search className="w-4 h-4" />
             </button>
             
-            <Link href={user ? (user.roles?.includes('ROLE_ADMIN') || user.roles?.includes('ADMIN') ? "/admin" : "/dashboard") : "/auth"} className="hover:text-primary transition-colors text-foreground/60 p-2">
+            <Link href={user ? (user.roles?.includes('ROLE_ADMIN') || user.roles?.includes('ADMIN') ? "/admin" : "/") : "/login"} className="hover:text-primary transition-colors text-foreground/60 p-2">
               <User className="w-4 h-4 sm:w-5 sm:h-5" />
             </Link>
 
@@ -138,7 +138,7 @@ export default function Navbar() {
                     </div>
                   </div>
                   <Link 
-                    href="/dashboard" 
+                    href={user.roles?.includes('ROLE_ADMIN') || user.roles?.includes('ADMIN') ? "/admin" : "/"} 
                     onClick={() => setIsMenuOpen(false)}
                     className="block w-full text-center py-4 bg-secondary text-[10px] font-bold uppercase tracking-widest border border-border"
                   >
@@ -156,7 +156,7 @@ export default function Navbar() {
                 </div>
               ) : (
                 <Link 
-                  href="/auth" 
+                  href="/login" 
                   onClick={() => setIsMenuOpen(false)}
                   className="w-full text-center py-4 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg shadow-primary/20"
                 >
